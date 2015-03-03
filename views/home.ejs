@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= locals.title %></h1>
+    <p>Welcome to <%= locals.title %></p>
+
+    <p>Player: <%= locals.data ? locals.data.first_name + " " + locals.data.last_name : 'Oops! no player' %></p>
+
+    <form method="POST", action="/players">
+    	<input type="text" id="first_name_field" name="first_name" />
+    	<input type="text" id="last_name_field" name="last_name" />
+    	<input type="submit" id="submit_btn" name="submit" />
+    </form>
+  </body>
+</html>
