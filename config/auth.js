@@ -1,6 +1,7 @@
 auth = {
 	isAuthenticated: function (req, res, next) {
-    if (req.user && req.user.isAuthenticated())
+		console.log(req.user);
+    if (req.isAuthenticated())
         return next();
     res.redirect('/login');
 	}

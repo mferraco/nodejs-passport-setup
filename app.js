@@ -36,7 +36,7 @@ app.use(session({
 }));
 
 // Set Up Passport
-require('./config/passport')
+require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
