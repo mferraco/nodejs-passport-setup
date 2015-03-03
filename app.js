@@ -48,6 +48,11 @@ app.get('/login', function(req, res) {
     res.render('authentication/login');
 });
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/login');
+});
+
 app.post('/login', passport.authenticate('local', 
     { successRedirect: '/',
       failureRedirect: '/login',
@@ -93,6 +98,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;
